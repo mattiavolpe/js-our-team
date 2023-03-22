@@ -67,8 +67,8 @@ const teamMembers = [
   }
 ]
 
-// Print, for each team member, all the properties he has 
 logToConsole(teamMembers);
+printMembersToDOM(teamMembers, ".container > .row");
 
 // <---------- FUNCTIONS ---------->
 
@@ -84,4 +84,35 @@ function logToConsole(teamMembers) {
     console.log(`Photo: ${thisMember.photo}`);
     console.log(`----------`);
   }
+}
+
+/**
+ * Prints to DOM, as strings, the properties of every team member
+ * @param {object[]} teamMembers Array containing every team member, with its properties
+ * @param {string} container CSS selector used to target the row that will contain the outputs
+ */
+function printMembersToDOM(teamMembers, classSelector) {
+  const rowElement = document.querySelector(`${classSelector}`);
+  const markupsList = createSingleMemberMarkup (teamMembers);
+  for (let i = 0; i < markupsList.length; i++) {
+    const singleMemberMarkup = markupsList[i];
+    rowElement.append(singleMemberMarkup);
+  }
+}
+
+/**
+ * Creates the markup for every team member
+ * @param {object[]} teamMembers Array containing every team member, with its properties
+ * @returns {HTMLElement[]} Array containing the markups of every team member
+ */
+function createSingleMemberMarkup(teamMembers) {
+  const membersMarkups = [];
+  for (let i = 0; i < teamMembers.length; i++) {
+    const thisMember = teamMembers[i];
+    const singleMemberElement = document.createElement("div");
+    singleMemberElement.classList.add("col", "my-4");
+    singleMemberElement.innerHTML = `Name: ${thisMember.name}<br>Role: ${thisMember.role}<br>Photo: ${thisMember.photo}`
+    membersMarkups.push(singleMemberElement);
+  }
+  return membersMarkups;
 }
