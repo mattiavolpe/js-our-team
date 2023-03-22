@@ -93,7 +93,7 @@ function logToConsole(teamMembers) {
  */
 function printMembersToDOM(teamMembers, classSelector) {
   const rowElement = document.querySelector(`${classSelector}`);
-  const markupsList = createSingleMemberMarkup (teamMembers);
+  const markupsList = createSingleMemberMarkup(teamMembers);
   for (let i = 0; i < markupsList.length; i++) {
     const singleMemberMarkup = markupsList[i];
     rowElement.append(singleMemberMarkup);
