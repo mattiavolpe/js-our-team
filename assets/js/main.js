@@ -93,7 +93,7 @@ function logToConsole(teamMembers) {
  */
 function printMembersToDOM(teamMembers, classSelector) {
   const rowElement = document.querySelector(`${classSelector}`);
-  const markupsList = createSingleMemberMarkup(teamMembers);
+  const markupsList = createMembersMarkups(teamMembers);
   for (let i = 0; i < markupsList.length; i++) {
     const singleMemberMarkup = markupsList[i];
     rowElement.append(singleMemberMarkup);
@@ -105,7 +105,7 @@ function printMembersToDOM(teamMembers, classSelector) {
  * @param {object[]} teamMembers Array containing every team member, with its properties
  * @returns {HTMLElement[]} Array containing the markups of every team member
  */
-function createSingleMemberMarkup(teamMembers) {
+function createMembersMarkups(teamMembers) {
   const membersMarkups = [];
   for (let i = 0; i < teamMembers.length; i++) {
     const thisMember = teamMembers[i];
