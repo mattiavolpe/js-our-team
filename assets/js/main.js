@@ -111,8 +111,16 @@ function createSingleMemberMarkup(teamMembers) {
     const thisMember = teamMembers[i];
     const singleMemberElement = document.createElement("div");
     singleMemberElement.classList.add("col", "my-4");
-    singleMemberElement.innerHTML = `Name: ${thisMember.name}<br>Role: ${thisMember.role}<br>`;
-    singleMemberElement.innerHTML += `<img src="${thisMember.photo}">`;
+    singleMemberElement.innerHTML = `
+    <div class="card">
+      <div class="card-header text-center">
+        <strong>${thisMember.name}</strong>
+      </div>
+      <div class="card-body text-center">
+        <img src="${thisMember.photo}" class="img-card-top img-fluid mb-3 rounded-3">
+        <span>${thisMember.role}</span>
+      </div>
+    </div>`
     membersMarkups.push(singleMemberElement);
   }
   return membersMarkups;
