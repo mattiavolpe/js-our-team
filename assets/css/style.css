@@ -1,0 +1,24 @@
+body {
+  font-family: 'Playfair Display', serif;
+}
+
+.card-header,
+.card-footer {
+  transition: background-color 0.5s, color 0.5s !important;
+}
+
+.card:hover .card-header,
+.card:hover .card-footer {
+  background-color: rgb(33, 37, 41) !important;
+  color: rgb(248, 249, 250) !important;
+}
+
+img {
+  transform: scale(0.8);
+  transition: 0.5s;
+}
+
+img:hover {
+  transform: scale(1);
+  border-radius: 1rem !important;
+}

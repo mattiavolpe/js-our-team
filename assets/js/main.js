@@ -112,12 +112,15 @@ function createSingleMemberMarkup(teamMembers) {
     const singleMemberElement = document.createElement("div");
     singleMemberElement.classList.add("col", "my-4");
     singleMemberElement.innerHTML = `
-    <div class="card">
-      <div class="card-header text-center">
-        <strong>${thisMember.name}</strong>
+    <div class="card border-dark">
+      <div class="card-header text-center fs-3 fw-bold bg-light text-dark">
+        <span>${thisMember.name}</span>
       </div>
-      <div class="card-body text-center">
-        <img src="${thisMember.photo}" class="img-card-top img-fluid mb-3 rounded-3">
+      <div class="card-body bg-white">
+        <img src="${thisMember.photo}" class="card-img-top rounded-circle">
+        <br>
+      </div>
+      <div class="card-footer text-center bg-light text-dark fs-5 fst-italic">
         <span>${thisMember.role}</span>
       </div>
     </div>`
