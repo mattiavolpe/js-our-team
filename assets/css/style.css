@@ -11,8 +11,17 @@ body {
   animation: pop 0.7s 1;
 }
 
+.card-header {
+  font-size: 1.5rem;
+}
+
 .card-body {
   transition: background-color 0.6s;
+}
+
+/* SET THIS TO MAKE THE CARDS THE SAME HEIGHT IN CASE CARD-FOOTER GOES ON MULTIPLE LINES */
+.card-footer {
+  flex-grow: 9999;
 }
 
 .col:first-of-type .card:hover .card-body {

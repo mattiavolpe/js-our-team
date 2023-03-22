@@ -110,17 +110,17 @@ function createMembersMarkups(teamMembers) {
   for (let i = 0; i < teamMembers.length; i++) {
     const thisMember = teamMembers[i];
     const singleMemberElement = document.createElement("div");
-    singleMemberElement.classList.add("col", "my-4");
+    singleMemberElement.classList.add("col", "my-4", "d-flex");
     singleMemberElement.innerHTML = `
     <div class="card border-dark">
-      <div class="card-header text-center fs-3 fw-bold bg-light text-dark">
+      <div class="card-header text-center fw-bold bg-light text-dark px-1">
         <span>${thisMember.name}</span>
       </div>
       <div class="card-body bg-white">
         <img src="${thisMember.photo}" class="card-img-top rounded-circle">
         <br>
       </div>
-      <div class="card-footer text-center bg-light text-dark fs-5 fst-italic">
+      <div class="card-footer position-relative text-center bg-light text-dark fs-5 fst-italic px-1">
         <span>${thisMember.role}</span>
       </div>
     </div>`
