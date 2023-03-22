@@ -33,37 +33,37 @@ const teamMembers = [
   {
     name: "Wayne Barnett",
     role: "Founder & CEO",
-    photo: "wayne-barnett-founder-ceo.jpg"
+    photo: "./assets/img/wayne-barnett-founder-ceo.jpg"
   },
 
   {
     name: "Angela Caroll",
     role: "Chief Editor",
-    photo: "angela-caroll-chief-editor.jpg"
+    photo: "./assets/img/angela-caroll-chief-editor.jpg"
   },
 
   {
     name: "Walter Gordon",
     role: "Office Manager",
-    photo: "walter-gordon-office-manager.jpg"
+    photo: "./assets/img/walter-gordon-office-manager.jpg"
   },
 
   {
     name: "Angela Lopez",
     role: "Social Media Manager",
-    photo: "angela-lopez-social-media-manager.jpg"
+    photo: "./assets/img/angela-lopez-social-media-manager.jpg"
   },
 
   {
     name: "Scott Estrada",
     role: "Developer",
-    photo: "scott-estrada-developer.jpg"
+    photo: "./assets/img/scott-estrada-developer.jpg"
   },
 
   {
     name: "Barbara Ramos",
     role: "Graphic Designer",
-    photo: "barbara-ramos-graphic-designer.jpg"
+    photo: "./assets/img/barbara-ramos-graphic-designer.jpg"
   }
 ]
 
@@ -111,7 +111,8 @@ function createSingleMemberMarkup(teamMembers) {
     const thisMember = teamMembers[i];
     const singleMemberElement = document.createElement("div");
     singleMemberElement.classList.add("col", "my-4");
-    singleMemberElement.innerHTML = `Name: ${thisMember.name}<br>Role: ${thisMember.role}<br>Photo: ${thisMember.photo}`
+    singleMemberElement.innerHTML = `Name: ${thisMember.name}<br>Role: ${thisMember.role}<br>`;
+    singleMemberElement.innerHTML += `<img src="${thisMember.photo}">`;
     membersMarkups.push(singleMemberElement);
   }
   return membersMarkups;
